@@ -5,6 +5,9 @@ const hbs = require('hbs');
 //Importing helpers
 require('./hbs/helpers');
 
+//Vairbale para desplegar en heroku
+const port = process.env.PORT || 3000;
+
 //Servir pagina estatica
 app.use(express.static( __dirname +'/public'));
 
@@ -35,6 +38,6 @@ app.get('/hola', function (req, res) {
     res.send(persona);
 })
 
-app.listen(3000, () => {
-    console.log('Listen to port 3000');
+app.listen(port, () => {
+    console.log(`Listen on port ${port}`);
 })
