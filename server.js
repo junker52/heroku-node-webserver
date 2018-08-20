@@ -4,14 +4,13 @@ const app = express()
 //Servir pagina estatica
 app.use(express.static( __dirname+'/public'));
 
+//Express Engine
+app.set('view engine', 'hbs');
+
 app.get('/', function (req, res) {
 
-    let persona = {
-        nombre: 'Juan',
-        edad: 23,
-        url: req.url
-    };
-    res.send(persona);
+    //res.send(persona);
+    res.render('home',{name: 'Ricard'});
 })
 
  
