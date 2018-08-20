@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express()
- 
+
+//Servir pagina estatica
+app.use(express.static( __dirname+'/public'));
+
 app.get('/', function (req, res) {
 
     let persona = {
