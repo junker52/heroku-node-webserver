@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 const hbs = require('hbs');
 
+//Importing helpers
+require('./hbs/helpers');
+
 //Servir pagina estatica
 app.use(express.static( __dirname +'/public'));
 
@@ -12,7 +15,7 @@ app.set('view engine', 'hbs');
 //Express Rendering Views
 app.get('/', function (req, res) {
 
-    res.render('home',{name: 'Ricard', title: "Home Page"});
+    res.render('home',{name: 'Ricard MOLIna', title: "Home Page"});
 })
 
 app.get('/about', function (req, res) {
